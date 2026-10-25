@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algerian Clothing | متجر الملابس</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #171717;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+      border-bottom: 3px solid #c9a447;
+    }
+    header h1 { margin: 0 0 10px; color: #e5c36b; }
+    header p { margin: 0; }
+    nav { margin-top: 16px; }
+    nav a {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    .hero {
+      padding: 55px 18px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #161616, #48402c);
+    }
+    .hero h2 { font-size: 30px; margin: 0 0 12px; }
+    .hero p { line-height: 1.8; }
+    .btn {
+      display: inline-block;
+      background: #d4af50;
+      color: #111;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+    main { max-width: 1100px; margin: auto; padding: 24px 16px; }
+    h2.section-title { text-align: center; margin: 15px 0 25px; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px #00000012;
+      padding-bottom: 18px;
+      text-align: center;
+    }
+    .product img { width: 100%; height: 250px; object-fit: cover; }
+    .product h3 { margin: 14px 8px 8px; }
+    .price { color: #9a7724; font-weight: bold; margin: 10px; }
+    .product button { margin-top: 5px; }
+    .contact {
+      margin-top: 35px;
+      padding: 28px 18px;
+      background: #fff;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 2;
+    }
+    footer {
+      background: #111;
+      color: #ddd;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    #cart { font-weight: bold; color: #e5c36b; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Algerian Clothing</h1>
+    <p>أناقتك تبدأ من هنا ✨</p>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#contact">اتصل بنا</a>
+      <span id="cart">السلة: 0</span>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>اكتشف أناقتك</h2>
+    <p>أحدث صيحات الملابس بأسعار تناسبك، والتوصيل إلى ولايات الجزائر.</p>
+    <a class="btn" href="#products">تسوق الآن</a>
+  </section>
+
+  <main>
+    <h2 class="section-title" id="products">منتجاتنا</h2>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="قميص رجالي">
+        <h3>قميص رجالي</h3>
+        <p>قميص أنيق للاستعمال اليومي</p>
+        <p class="price">2500 دج</p>
+        <button class="btn" onclick="addToCart('قميص رجالي')">أضف إلى السلة</button>
+      </article>
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80" alt="سروال جينز">
+        <h3>سروال جينز</h3>
+        <p>تصميم عصري ومريح</p>
+        <p class="price">3500 دج</p>
+        <button class="btn" onclick="addToCart('سروال جينز')">أضف إلى السلة</button>
+      </article>
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80" alt="ملابس عصرية">
+        <h3>إطلالة عصرية</h3>
+        <p>ملابس تناسب إطلالتك اليومية</p>
+        <p class="price">4000 دج</p>
+        <button class="btn" onclick="addToCart('إطلالة عصرية')">أضف إلى السلة</button>
+      </article>
+    </div>
+
+    <section class="contact" id="contact">
+      <h2>اطلب منتجك الآن</h2>
+      <p>للطلب والاستفسار، تواصل معنا عبر الهاتف أو واتساب.</p>
+      <p><strong>رقم الهاتف:</strong> أضف رقمك هنا بعد تعديل الكود.</p>
+      <a class="btn" href="https://wa.me/213000000000">اطلب عبر واتساب</a>
+      <p>استبدل رقم واتساب في الرابط برقمك مع رمز الجزائر 213، دون علامة + أو أصفار البداية.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Algerian Clothing — جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    let cartCount = 0;
+    function addToCart(product) {
+      cartCount++;
+      document.getElementById('cart').textContent = 'السلة: ' + cartCount;
+      alert('تمت إضافة ' + product + ' إلى السلة.');
+    }
+  </script>
+</body>
+</html>

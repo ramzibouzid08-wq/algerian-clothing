@@ -1,154 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Algerian Clothing | متجر الملابس</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #171717;
-    }
-    header {
-      background: #111;
-      color: white;
-      padding: 22px 16px;
-      text-align: center;
-      border-bottom: 3px solid #c9a447;
-    }
-    header h1 { margin: 0 0 10px; color: #e5c36b; }
-    header p { margin: 0; }
-    nav { margin-top: 16px; }
-    nav a {
-      color: white;
-      margin: 0 8px;
-      text-decoration: none;
-    }
-    .hero {
-      padding: 55px 18px;
-      text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #161616, #48402c);
-    }
-    .hero h2 { font-size: 30px; margin: 0 0 12px; }
-    .hero p { line-height: 1.8; }
-    .btn {
-      display: inline-block;
-      background: #d4af50;
-      color: #111;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      border: 0;
-      cursor: pointer;
-    }
-    main { max-width: 1100px; margin: auto; padding: 24px 16px; }
-    h2.section-title { text-align: center; margin: 15px 0 25px; }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .product {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px #00000012;
-      padding-bottom: 18px;
-      text-align: center;
-    }
-    .product img { width: 100%; height: 250px; object-fit: cover; }
-    .product h3 { margin: 14px 8px 8px; }
-    .price { color: #9a7724; font-weight: bold; margin: 10px; }
-    .product button { margin-top: 5px; }
-    .contact {
-      margin-top: 35px;
-      padding: 28px 18px;
-      background: #fff;
-      border-radius: 10px;
-      text-align: center;
-      line-height: 2;
-    }
-    footer {
-      background: #111;
-      color: #ddd;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-    #cart { font-weight: bold; color: #e5c36b; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Maharat Pneus | إطارات السيارات</title>
+<style>
+:root{--yellow:#f5c400;--black:#111;--gray:#f4f4f4}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#fff;color:#171717;line-height:1.7}
+header{background:#111;color:#fff;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:22px;font-weight:900;color:var(--yellow);letter-spacing:.4px}
+header a{color:#111;background:var(--yellow);padding:9px 14px;border-radius:8px;text-decoration:none;font-weight:bold}
+.hero{background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.52)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85') center/cover;color:#fff;padding:70px 6%;min-height:330px;display:flex;align-items:center}
+.hero-inner{max-width:650px}
+.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.25;margin:0 0 15px}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:18px;color:#eee;margin-bottom:25px}
+.btn{display:inline-block;background:var(--yellow);color:#111;padding:12px 22px;border:0;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;cursor:pointer}
+section{padding:38px 5%;max-width:1100px;margin:auto}
+.section-title{text-align:center;margin:0 0 8px;font-size:27px}
+.sub{text-align:center;color:#666;margin:0 0 25px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.feature{background:var(--gray);padding:18px 10px;text-align:center;border-radius:12px;font-weight:bold}
+form{background:#fff;border:1px solid #e4e4e4;border-radius:15px;padding:20px;box-shadow:0 5px 24px #0000000c}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:block;font-weight:bold;margin-bottom:5px;font-size:14px}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;background:white;font:inherit;font-size:16px}
+fieldset{border:1px solid #ddd;border-radius:10px;margin:0 0 17px;padding:14px}
+legend{font-weight:bold;padding:0 7px}
+.size-result{background:#fff8d7;border:1px solid #f0d46b;border-radius:8px;padding:10px;text-align:center;margin-top:12px;font-weight:bold}
+.full{grid-column:1/-1}
+.note{font-size:13px;color:#666}
+footer{background:#111;color:#ddd;text-align:center;padding:24px 12px;margin-top:25px}
+@media(max-width:620px){header{padding:12px 4%}.logo{font-size:18px}.hero{padding:48px 5%;min-height:300px}.features{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}section{padding:30px 4%}form{padding:15px}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Algerian Clothing</h1>
-    <p>أناقتك تبدأ من هنا ✨</p>
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#products">المنتجات</a>
-      <a href="#contact">اتصل بنا</a>
-      <span id="cart">السلة: 0</span>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <h2>اكتشف أناقتك</h2>
-    <p>أحدث صيحات الملابس بأسعار تناسبك، والتوصيل إلى ولايات الجزائر.</p>
-    <a class="btn" href="#products">تسوق الآن</a>
-  </section>
-
-  <main>
-    <h2 class="section-title" id="products">منتجاتنا</h2>
-    <div class="products">
-      <article class="product">
-<img src="IMG_7110.jpeg" alt="قميص رجالي">
-        <img src="IMG_7111.jpeg" alt="سروال جينز">
-<img src="IMG_7112.jpeg" alt="ملابس عصرية">
-        <h3>قميص رجالي</h3>
-        <p>قميص أنيق للاستعمال اليومي</p>
-        <p class="price">2500 دج</p>
-        <button class="btn" onclick="addToCart('قميص رجالي')">أضف إلى السلة</button>
-      </article>
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80" alt="سروال جينز">
-        <h3>سروال جينز</h3>
-        <p>تصميم عصري ومريح</p>
-        <p class="price">3500 دج</p>
-        <button class="btn" onclick="addToCart('سروال جينز')">أضف إلى السلة</button>
-      </article>
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80" alt="ملابس عصرية">
-        <h3>إطلالة عصرية</h3>
-        <p>ملابس تناسب إطلالتك اليومية</p>
-        <p class="price">4000 دج</p>
-        <button class="btn" onclick="addToCart('إطلالة عصرية')">أضف إلى السلة</button>
-      </article>
+<header>
+  <div class="logo">MAHARAT PNEUS</div>
+  <a href="#order">اطلب الآن</a>
+</header>
+<main>
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>عجلات عالية الجودة<br><span>بأفضل الأسعار</span></h1>
+      <p>في متناولكم — اختر مقاس الإطار المناسب لسيارتك وأرسل طلبك بسهولة.</p>
+      <a class="btn" href="#order">اطلب الآن</a>
     </div>
-
-    <section class="contact" id="contact">
-      <h2>اطلب منتجك الآن</h2>
-      <p>للطلب والاستفسار، تواصل معنا عبر الهاتف أو واتساب.</p<p><strong>رقم الهاتف:</strong>
-<a href="tel:0656948372">0656948372</a></<a class="btn" href="https://wa.me/213656948372">اطلب عبر واتساب</a>>
- 
-    </section>
-  </main>
-
-  <footer>
-    © 2026 Algerian Clothing — جميع الحقوق محفوظة
-  </footer>
-
-  <script>
-    let cartCount = 0;
-    function addToCart(product) {
-      cartCount++;
-      document.getElementById('cart').textContent = 'السلة: ' + cartCount;
-      alert('تمت إضافة ' + product + ' إلى السلة.');
-    }
-  </script>
+  </div>
+  <section>
+    <div class="features">
+      <div class="feature">✓ خيارات متعددة للمقاسات</div>
+      <div class="feature">✓ طلب سهل وسريع</div>
+      <div class="feature">✓ توصيل حسب الاتفاق</div>
+    </div>
+  </section>
+  <section id="order">
+    <h2 class="section-title">اختر مقاس الإطار</h2>
+    <p class="sub">حدّد المواصفات المطبوعة على جانب إطارك الحالي.</p>
+    <form id="orderForm">
+      <fieldset>
+        <legend>مقاس الإطار</legend>
+        <div class="form-grid">
+          <div><label for="brand">الماركة *</label><select id="brand" required><option value="">اختر الماركة</option><option>Continental</option><option>IRIS</option></select></div>
+          <div><label for="width">العرض (مم) *</label><select id="width" required><option value="">اختر العرض</option><option>155</option><option>165</option><option>175</option><option>185</option><option>195</option><option>205</option><option>215</option><option>225</option><option>235</option><option>245</option><option>255</option><option>265</option><option>275</option></select></div>
+          <div><label for="ratio">النسبة (%) *</label><select id="ratio" required><option value="">اختر النسبة</option><option>40</option><option>45</option><option>50</option><option>55</option><option>60</option><option>65</option><option>70</option><option>75</option><option>80</option></select></div>
+          <div><label for="rim">قطر الحافة (بوصة) *</label><select id="rim" required><option value="">اختر القطر</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select></div>
+        </div>
+        <div class="size-result" id="sizeResult">المقاس المحدد: —/— R—</div>
+      </fieldset>
+      <fieldset>
+        <legend>معلومات الزبون والسيارة</legend>
+        <div class="form-grid">
+          <div><label for="name">الاسم واللقب *</label><input id="name" required autocomplete="name" placeholder="اكتب اسمك الكامل"></div>
+          <div><label for="phone">رقم الهاتف *</label><input id="phone" required inputmode="tel" autocomplete="tel" placeholder="05 / 06 / 07" pattern="[0-9 +()-]{9,18}"></div>
+          <div><label for="phone2">رقم الهاتف الثاني</label><input id="phone2" inputmode="tel" placeholder="اختياري"></div>
+          <div><label for="car">نوع السيارة *</label><input id="car" required placeholder="مثال: Renault Clio"></div>
+          <div><label for="tireType">نوع الإطار *</label><select id="tireType" required><option value="">اختر النوع</option><option>إطارات صيفية</option><option>إطارات شتوية</option><option>إطارات عامة</option><option>إطارات رياضية</option><option>إطارات اقتصادية</option><option>آخر</option></select></div>
+          <div><label for="quantity">الكمية المطلوبة *</label><select id="quantity" required><option value="">اختر الكمية</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <div class="full"><label for="wilaya">الولاية *</label><select id="wilaya" required><option value="">اختر الولاية</option>
+          <option>01 - أدرار</option><option>02 - الشلف</option><option>03 - الأغواط</option><option>04 - أم البواقي</option><option>05 - باتنة</option><option>06 - بجاية</option><option>07 - بسكرة</option><option>08 - بشار</option><option>09 - البليدة</option><option>10 - البويرة</option><option>11 - تمنراست</option><option>12 - تبسة</option><option>13 - تلمسان</option><option>14 - تيارت</option><option>15 - تيزي وزو</option><option>16 - الجزائر</option><option>17 - الجلفة</option><option>18 - جيجل</option><option>19 - سطيف</option><option>20 - سعيدة</option><option>21 - سكيكدة</option><option>22 - سيدي بلعباس</option><option>23 - عنابة</option><option>24 - قالمة</option><option>25 - قسنطينة</option><option>26 - المدية</option><option>27 - مستغانم</option><option>28 - المسيلة</option><option>29 - معسكر</option><option>30 - ورقلة</option><option>31 - وهران</option><option>32 - البيض</option><option>33 - إليزي</option><option>34 - برج بوعريريج</option><option>35 - بومرداس</option><option>36 - الطارف</option><option>37 - تندوف</option><option>38 - تيسمسيلت</option><option>39 - الوادي</option><option>40 - خنشلة</option><option>41 - سوق أهراس</option><option>42 - تيبازة</option><option>43 - ميلة</option><option>44 - عين الدفلى</option><option>45 - النعامة</option><option>46 - عين تموشنت</option><option>47 - غليزان</option><option>48 - غرداية</option></select></div>
+          <div class="full"><label for="delivery">طريقة التوصيل *</label><select id="delivery" required><option value="">اختر طريقة التوصيل</option><option>التوصيل إلى المنزل</option><option>التوصيل إلى مكتب شركة التوصيل</option></select></div>
+        </div>
+      </fieldset>
+      <p class="note">سيتم تجهيز ملخص الطلب ليرسله الزبون عبر واتساب بعد إدخال رقم واتساب الخاص بالمتجر. لا تُدخل بيانات البطاقة الذهبية في هذا النموذج.</p>
+      <button class="btn" type="submit" style="width:100%">تأكيد الطلب عبر واتساب</button>
+      <p class="note" id="formMessage" role="status"></p>
+    </form>
+  </section>
+</main>
+<footer><strong style="color:#f5c400">MAHARAT PNEUS</strong><br>عجلات عالية الجودة بأفضل الأسعار في متناولكم</footer>
+<script>
+const $=id=>document.getElementById(id);
+function updateSize(){const w=$('width').value||'—',r=$('ratio').value||'—',d=$('rim').value||'—';$('sizeResult').textContent=`المقاس المحدد: ${w}/${r} R${d}`}
+['width','ratio','rim'].forEach(id=>$(id).addEventListener('change',updateSize));
+$('orderForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const data={
+  'الاسم واللقب':$('name').value.trim(),
+  'رقم الهاتف':$('phone').value.trim(),
+  'الهاتف الثاني':$('phone2').value.trim()||'غير محدد',
+  'الماركة':$('brand').value,
+  'مقاس الإطار':`${$('width').value}/${$('ratio').value} R${$('rim').value}`,
+  'نوع السيارة':$('car').value.trim(),
+  'نوع الإطار':$('tireType').value,
+  'الولاية':$('wilaya').value,
+  'الكمية':$('quantity').value,
+  'التوصيل':$('delivery').value
+ };
+ const lines=Object.entries(data).map(([k,v])=>`${k}: ${v}`).join('\n');
+ const shopNumber=''; // أضف رقم واتساب المتجر بصيغة دولية، مثال: 213XXXXXXXXX
+ if(!shopNumber){
+  $('formMessage').textContent='النموذج جاهز، لكن يجب إضافة رقم واتساب المتجر داخل الكود قبل استقبال الطلبات. لا يُرسل الطلب تلقائيًا حاليًا.';
+  return;
+ }
+ window.open('https://wa.me/'+shopNumber+'?text='+encodeURIComponent('طلب جديد من موقع Maharat Pneus\n'+lines),'_blank');
+});
+</script>
 </body>
 </html>
